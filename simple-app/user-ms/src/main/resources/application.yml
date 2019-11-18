@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: user-ms
+  data:
+    mongodb:
+      uri: ${MONGO_URL:mongodb://mongodb:27017/user}
+server:  
+  port: ${PORT:8080}
