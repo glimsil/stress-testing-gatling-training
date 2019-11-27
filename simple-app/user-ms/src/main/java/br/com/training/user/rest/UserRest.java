@@ -61,4 +61,15 @@ public class UserRest {
 		}
 	}
 
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
+		log.info("Getting users " + id);
+		try {
+			userService.delete(id);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.notFound().build();
+		}
+	}
+
 }

@@ -158,7 +158,7 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
-	public void delete(String id) {
+	public void delete(Integer id) {
 		userRepository.delete(id);
 	}
 
