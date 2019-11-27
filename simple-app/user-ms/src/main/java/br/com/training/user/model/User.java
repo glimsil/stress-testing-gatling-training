@@ -1,26 +1,31 @@
 package br.com.training.user.model;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-
 import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 @Builder
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "User")
+@Entity(name = "test_user")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	String id;
+	Integer id;
+	@Column(name="firstName")
 	String firstName;
+	@Column(name="lastName")
 	String lastName;
+	@Column(name="email")
 	String email;
+	@Column(name="gender")
 	String gender;
+	@Column(name="ipAddress")
 	String ipAddress;
 }

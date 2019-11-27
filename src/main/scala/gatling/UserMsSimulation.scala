@@ -21,7 +21,7 @@ class UserMsSimulation extends Simulation {
         atOnceUsers(1000),
         rampUsers(500) during (10 seconds),
         constantUsersPerSec(500) during (20 seconds),
-        rampUsersPerSec(100) to 75 during (2 minutes) randomized
+        rampUsersPerSec(100) to 750 during (2 minutes) randomized
     )).protocols(httpProtocol)
 
 }

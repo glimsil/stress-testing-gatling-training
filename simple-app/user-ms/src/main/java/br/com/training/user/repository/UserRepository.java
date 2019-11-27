@@ -1,10 +1,10 @@
 package br.com.training.user.repository;
 
 import br.com.training.user.model.User;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.io.Serializable;
 
-public interface UserRepository extends MongoRepository<User, Serializable>{
+public interface UserRepository extends JpaRepository<User, Serializable> {
 
 }

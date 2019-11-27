@@ -1,0 +1,13 @@
+insert into user_pet_link (userId, petId) values (1, 2);
+insert into user_pet_link (userId, petId) values (1, 3);
+insert into user_pet_link (userId, petId) values (1, 4);
+insert into user_pet_link (userId, petId) values (1, 5);
+insert into user_pet_link (userId, petId) values (1, 6);
+insert into user_pet_link (userId, petId) values (1, 7);
+insert into user_pet_link (userId, petId) values (1, 8);
+insert into user_pet_link (userId, petId) values (1, 9);
+insert into user_pet_link (userId, petId) values (1, 10);
+insert into user_pet_link (userId, petId) values (1, 201);
+insert into user_pet_link (userId, petId) values (1, 899);
+insert into user_pet_link (userId, petId) values (2, 703);
+insert into user_pet_link (userId, petId) values (2, 901);

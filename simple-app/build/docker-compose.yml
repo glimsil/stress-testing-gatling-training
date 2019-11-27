@@ -1,18 +1,31 @@
 version: "2.0"
 services:
+  postgresdb:
+    image: postgres:10
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "plusdb"
+    volumes:
+      - ~/.stress-training/postgresdb:/var/lib/postgresql/data
+  db-seed:
+    build: ./db-seed
+    links:
+      - postgresdb
+
   user-ms:
     build: ./user-ms/
     ports:
       - 8182:8080
     depends_on:
-      - mongodb
-
-  mongodb:
-    image: mongo:3
+      - postgresdb
+      - db-seed
+  pet-ms:
+    build: ./pet-ms/
     ports:
-      - "27017:27017"
-
-  mongo-seed:
-    build: ./mongo-seed
-    links:
-      - mongodb
+      - 8183:8080
+    depends_on:
+      - postgresdb
+      - db-seed

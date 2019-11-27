@@ -1,0 +1,22 @@
+/build/
+/bin/
+/logs/
+.DS_Store
+.gradle
+.settings
+.classpath
+.project
+.DS_Store
+
+.idea
+build
+*.iml
+*.iws
+.gradle/
+out
+
+# Log file
+*.log
+logs/
+coverage/
+.clover/

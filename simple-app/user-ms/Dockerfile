@@ -1,8 +1,8 @@
 FROM openjdk:8-alpine3.8
 
-ENV SLEEP 3
+ENV SLEEP 10
 
-ADD target/*.jar /user-ms.jar
+ADD build/libs/*.jar /user-ms.jar
 
 RUN sh -c 'touch /user-ms.jar'
 

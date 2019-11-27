@@ -1,9 +1,11 @@
 package br.com.training.user.rest;
 
 import br.com.training.user.exception.UserAlreadyExistsException;
+import br.com.training.user.exception.UserDoesNotExistsException;
 import br.com.training.user.model.User;
 import br.com.training.user.rest.dto.ErrorDTO;
 import br.com.training.user.rest.dto.UserDTO;
+import br.com.training.user.rest.dto.UserResponseDTO;
 import br.com.training.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,15 +25,19 @@ public class UserRest {
 	UserService userService;
 
 	@GetMapping
-	public ResponseEntity<Page<User>> get(Pageable pageable, @RequestParam(value = "search", required = false) String searchString) {
+	public ResponseEntity<Page<UserResponseDTO>> get(Pageable pageable, @RequestParam(value = "search", required = false) String searchString) {
 		log.info("Getting all users");
 		return ResponseEntity.ok(userService.find(pageable, searchString));
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<User> get(@PathVariable("id") String id) {
+	public ResponseEntity<UserResponseDTO> get(@PathVariable("id") Integer id) {
 		log.info("Getting users " + id);
-		return ResponseEntity.ok(userService.find(id));
+		try {
+			return ResponseEntity.ok(userService.find(id));
+		} catch (UserDoesNotExistsException e) {
+			return ResponseEntity.notFound().build();
+		}
 	}
 
 	@PostMapping
@@ -41,6 +47,16 @@ public class UserRest {
 			return ResponseEntity.ok(userService.create(dto.getFirstName(), dto.getLastName(), dto.getEmail(),
 					dto.getGender()));
 		} catch (UserAlreadyExistsException e) {
+			return ResponseEntity.badRequest().body(new ErrorDTO(e.getMessage()));
+		}
+	}
+
+	@PostMapping("/{id}/link/pet/{petId}")
+	public ResponseEntity<?> linkPet(@PathVariable("id") Integer id, @PathVariable("petId") Integer petId) {
+		log.info("Linking user" + id + " to pet " + petId);
+		try {
+			return ResponseEntity.ok(userService.linkPet(id, petId));
+		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(new ErrorDTO(e.getMessage()));
 		}
 	}

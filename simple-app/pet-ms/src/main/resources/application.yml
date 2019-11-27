@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: pet-ms
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+      namingStrategy: org.hibernate.cfg.EJB3NamingStrategy
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+
+  datasource:
+    platform: ${DATABASE_PROVIDER:postgres}
+    url: ${DATABASE_URL:jdbc:postgresql://postgresdb:5432/plusdb}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASS:postgres}
+    driverClassName: org.postgresql.Driver
+server:  
+  port: ${PORT:8080}
