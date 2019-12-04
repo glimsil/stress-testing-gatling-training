@@ -1,7 +1,9 @@
 # Stress Testing Gatling Training #
 
-## What do we need for this training:
+## Tech Stack:
   - Java 8
+  - PostgreSQL
+  - Scala
   - gradle
   - Docker & Docker-Compose
 
