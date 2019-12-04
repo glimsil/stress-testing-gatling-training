@@ -2,9 +2,8 @@
 
 ## What do we need for this training:
   - Java 8
-  - Maven
+  - gradle
   - Docker & Docker-Compose
-  - Robo3T
 
 ## What do you need todo
  - Understand the system and it limitations.(code, running tests, etc)
@@ -32,13 +31,19 @@ Here are some user stories that the development team used to deliver this applic
 ## Running the services and tests
 To run the services just type:
 ```
-cd simple-app/
-./buildAndRun.sh
+	cd simple-app/
+	./buildAndRun.sh
 ```
 
-To simply run the tests, you can just type
+To simply run a simulation using gradle, you can just type:
 ```
-mvn -Dgatling.simulation.name=<SIMULATION_NAME> gatling:test
+	./gradlew gatlingRun-UserMsSimulation
+```
+
+
+We can do the same thing using maven, you can just type:
+```
+	mvn -Dgatling.simulation.name=<SIMULATION_NAME> gatling:test
 ```
 
 
@@ -47,7 +52,7 @@ mvn -Dgatling.simulation.name=<SIMULATION_NAME> gatling:test
 Simple example of how to run gatling stress testing as stand alone JAR.
 It builds with maven plugin but runs idenpendently.
 
-To build the jar:
+To build the jar we need to use a maven plugin, just type:
 ```
 	mvn clean install
 ```

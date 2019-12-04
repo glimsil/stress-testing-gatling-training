@@ -1,0 +1,12 @@
+products:
+   /home/ilegra0408/GIT/stress-testing-gatling-training/src/main/scala/gatling/UserMsSimulation.scala -> /home/ilegra0408/GIT/stress-testing-gatling-training/build/classes/scala/main/UserMsSimulation.class
+binary dependencies:
+   /home/ilegra0408/GIT/stress-testing-gatling-training/src/main/scala/gatling/UserMsSimulation.scala -> /home/ilegra0408/.gradle/caches/modules-2/files-2.1/io.gatling/gatling-commons/3.0.0/9ad3e9fe1c03beaafa97a2b45e2beadefa3da3e9/gatling-commons-3.0.0.jar
+   /home/ilegra0408/GIT/stress-testing-gatling-training/src/main/scala/gatling/UserMsSimulation.scala -> /home/ilegra0408/.gradle/caches/modules-2/files-2.1/io.gatling/gatling-core/3.0.0/33a67459c9a811f07402a20e5412ee68a858c00e/gatling-core-3.0.0.jar
+   /home/ilegra0408/GIT/stress-testing-gatling-training/src/main/scala/gatling/UserMsSimulation.scala -> /home/ilegra0408/.gradle/caches/modules-2/files-2.1/io.gatling/gatling-http/3.0.0/3cfa9ad0f8c97c8b52ec3595d0dddccc94aebdc7/gatling-http-3.0.0.jar
+   /home/ilegra0408/GIT/stress-testing-gatling-training/src/main/scala/gatling/UserMsSimulation.scala -> /home/ilegra0408/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.7/18c09ad08ec783f5074f4a0d6308a78759000cb1/scala-library-2.12.7.jar
+   /home/ilegra0408/GIT/stress-testing-gatling-training/src/main/scala/gatling/UserMsSimulation.scala -> /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+source dependencies:
+external dependencies:
+class names:
+   /home/ilegra0408/GIT/stress-testing-gatling-training/src/main/scala/gatling/UserMsSimulation.scala -> UserMsSimulation

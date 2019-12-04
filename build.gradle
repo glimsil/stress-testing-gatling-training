@@ -1,0 +1,28 @@
+plugins {
+    id "com.github.lkishalmi.gatling" version "3.2.9"
+    id 'java'
+}
+
+group = 'br.com.training'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile 'io.gatling.highcharts:gatling-charts-highcharts:3.0.0'
+}
+
+gatling {
+  simulations = {
+    include "src/main/scala/gatling"
+  }
+}
